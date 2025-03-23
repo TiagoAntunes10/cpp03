@@ -6,7 +6,7 @@
 /*   By: tialbert <tialbert@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/22 22:15:17 by tialbert          #+#    #+#             */
-/*   Updated: 2025/03/23 16:02:37 by tialbert         ###   ########.fr       */
+/*   Updated: 2025/03/23 18:02:57 by tialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ ClapTrap::~ClapTrap( void ) {
 	std::cout << _name << ": Destructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap( ClapTrap &ct ) {
+ClapTrap::ClapTrap( ClapTrap const &ct ) {
 	*this = ct;
 
 	std::cout << _name
@@ -60,11 +60,12 @@ ClapTrap::ClapTrap( ClapTrap &ct ) {
 		<< std::endl;
 }
 
-ClapTrap	&ClapTrap::operator=( ClapTrap &ct ) {
+ClapTrap	&ClapTrap::operator=( ClapTrap const &ct ) {
 	_name = ct._name;
-	_hitPoints = 10;
-	_energyPoints = 10;
-	_atkDamage = 0;
+	_hitPoints = ct._hitPoints;
+	_energyPoints = ct._energyPoints;
+	_atkDamage = ct._atkDamage;
+
 	std::cout << _name
 		<< ": Copy assignment operator called"
 		<< " (Total health: "
