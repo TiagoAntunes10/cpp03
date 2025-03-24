@@ -5,7 +5,7 @@ SOURCE = main.cpp ClapTrap.cpp ScavTrap.cpp
 
 SOURCES = ${addprefix $(PRE), $(SOURCE)}
 
-NAME = clap_trap
+NAME = scav_trap
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
