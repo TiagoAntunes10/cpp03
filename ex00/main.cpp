@@ -6,7 +6,7 @@
 /*   By: tialbert <tialbert@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/22 22:13:13 by tialbert          #+#    #+#             */
-/*   Updated: 2025/03/23 15:45:01 by tialbert         ###   ########.fr       */
+/*   Updated: 2025/03/26 22:13:19 by tialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,21 @@ int main(void) {
 	c.beRepaired(5);
 	std::cout << "d beRepaired: ";
 	d.beRepaired(5);
+
+	std::cout << std::endl;
+	a.takeDamage(10);
+	std::cout << std::endl;
+
+	b.attack("enemy");
+	b.attack("enemy");
+	b.attack("enemy");
+	b.attack("enemy");
+	b.attack("enemy");
+	b.beRepaired(1);
+	b.beRepaired(1);
+	b.beRepaired(1);
+	b.beRepaired(1);
+	b.attack("enemy");
 
 	std::cout << std::endl;
 }
