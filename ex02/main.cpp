@@ -6,7 +6,7 @@
 /*   By: tialbert <tialbert@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/22 22:13:13 by tialbert          #+#    #+#             */
-/*   Updated: 2025/03/24 21:08:09 by tialbert         ###   ########.fr       */
+/*   Updated: 2025/03/27 21:51:49 by tialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,16 @@ int main(void) {
 	c.highFivesGuys();
 	std::cout << "d highFivesGuys: ";
 	d.highFivesGuys();
+
+	std::cout << std::endl;
+	a.takeDamage(100);
+	std::cout << std::endl;
+
+	for (int i = 0; i < 50; i++) {
+		b.attack("enemy");
+		b.beRepaired(1);
+		std::cout << std::endl;
+	}
 
 	std::cout << std::endl;
 }
