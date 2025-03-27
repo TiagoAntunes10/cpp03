@@ -6,7 +6,7 @@
 /*   By: tialbert <tialbert@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/22 22:15:17 by tialbert          #+#    #+#             */
-/*   Updated: 2025/03/26 22:10:44 by tialbert         ###   ########.fr       */
+/*   Updated: 2025/03/27 21:31:56 by tialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,6 @@ ClapTrap::~ClapTrap( void ) {
 }
 
 ClapTrap::ClapTrap( ClapTrap const &ct ) {
-	*this = ct;
-
 	std::cout << _name
 		<< ": Copy constructor called"
 		<< " (Total health: "
@@ -58,6 +56,8 @@ ClapTrap::ClapTrap( ClapTrap const &ct ) {
 		<< _energyPoints
 		<< ")"
 		<< std::endl;
+
+	*this = ct;
 }
 
 ClapTrap	&ClapTrap::operator=( ClapTrap const &ct ) {
