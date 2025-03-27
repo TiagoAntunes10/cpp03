@@ -6,7 +6,7 @@
 /*   By: tialbert <tialbert@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/22 22:13:13 by tialbert          #+#    #+#             */
-/*   Updated: 2025/03/23 22:09:00 by tialbert         ###   ########.fr       */
+/*   Updated: 2025/03/27 21:44:10 by tialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,16 @@ int main(void) {
 	c.guardGate();
 	std::cout << "d guardGate: ";
 	d.guardGate();
+
+	std::cout << std::endl;
+	a.takeDamage(100);
+	std::cout << std::endl;
+
+	for (int i = 0; i < 25; i++) {
+		b.attack("enemy");
+		b.beRepaired(1);
+		std::cout << std::endl;
+	}
 
 	std::cout << std::endl;
 }
