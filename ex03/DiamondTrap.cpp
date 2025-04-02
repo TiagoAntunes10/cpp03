@@ -6,17 +6,13 @@
 /*   By: tialbert <tialbert@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 21:34:11 by tialbert          #+#    #+#             */
-/*   Updated: 2025/03/25 21:56:57 by tialbert         ###   ########.fr       */
+/*   Updated: 2025/04/02 22:16:15 by tialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./Include/include.hpp"
 
 DiamondTrap::DiamondTrap( void ) : ScavTrap(), FragTrap() {
-	FragTrap::_hitPoints = 100;
-	ScavTrap::_energyPoints = 50;
-	FragTrap::_atkDamage = 30;
-
 	std::cout << "DiamondTrap default constructor called"
 		<< " (Total health: "
 		<< _hitPoints
@@ -26,12 +22,8 @@ DiamondTrap::DiamondTrap( void ) : ScavTrap(), FragTrap() {
 		<< std::endl;
 }
 
-DiamondTrap::DiamondTrap( std::string name ) : ScavTrap(name), FragTrap(name) {
+DiamondTrap::DiamondTrap( std::string name ) : ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name) {
 	_name = name;
-	ClapTrap::_name = name.append("_clap_name");
-	_hitPoints = 100;
-	_energyPoints = 50;
-	_atkDamage = 30;
 
 	std::cout << "DiamondTrap "
 		<< _name
@@ -45,7 +37,7 @@ DiamondTrap::DiamondTrap( std::string name ) : ScavTrap(name), FragTrap(name) {
 }
 
 DiamondTrap::DiamondTrap( DiamondTrap const &dt ) : ClapTrap(dt), ScavTrap(dt), FragTrap(dt) {
-	*this = dt;
+	_name = dt._name;
 
 	std::cout << "DiamondTrap "
 		<< _name
@@ -60,7 +52,6 @@ DiamondTrap::DiamondTrap( DiamondTrap const &dt ) : ClapTrap(dt), ScavTrap(dt), 
 
 DiamondTrap &DiamondTrap::operator= ( DiamondTrap const &dt ) {
 	_name = dt._name;
-	ClapTrap::_name = _name.append("_clap_name");
 
 	ScavTrap::operator= (dt);
 	FragTrap::operator= (dt);
@@ -90,5 +81,6 @@ void	DiamondTrap::whoAmI() {
 	std::cout << _name
 		<< " or "
 		<< ClapTrap::_name
+		<< "?"
 		<< std::endl;
 }

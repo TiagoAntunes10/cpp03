@@ -6,7 +6,7 @@
 /*   By: tialbert <tialbert@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 22:39:21 by tialbert          #+#    #+#             */
-/*   Updated: 2025/03/25 21:33:14 by tialbert         ###   ########.fr       */
+/*   Updated: 2025/04/02 22:10:06 by tialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,11 @@ class FragTrap: virtual public ClapTrap {
 		FragTrap &operator= ( FragTrap const &st );
 		~FragTrap( void );
 		void	highFivesGuys( void );
+
+	protected:
+		static int	_hitPoints;
+		static int	_atkDamage;
+		std::string	_name;
 };
 
 #endif

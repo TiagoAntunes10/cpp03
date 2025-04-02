@@ -6,7 +6,7 @@
 /*   By: tialbert <tialbert@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/22 22:13:13 by tialbert          #+#    #+#             */
-/*   Updated: 2025/03/25 21:48:52 by tialbert         ###   ########.fr       */
+/*   Updated: 2025/04/02 22:18:36 by tialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,24 @@ int main(void) {
 	std::cout << "d beRepaired: ";
 	d.beRepaired(5);
 
+	std::cout << std::endl << "a guardGate: ";
+	a.guardGate();
+	std::cout << "b guardGate: ";
+	b.guardGate();
+	std::cout << "c guardGate: ";
+	c.guardGate();
+	std::cout << "d guardGate: ";
+	d.guardGate();
+
+	std::cout << std::endl << "a highFivesGuys: ";
+	a.highFivesGuys();
+	std::cout << "b highFivesGuys: ";
+	b.highFivesGuys();
+	std::cout << "c highFivesGuys: ";
+	c.highFivesGuys();
+	std::cout << "d highFivesGuys: ";
+	d.highFivesGuys();
+
 	std::cout << std::endl << "a whoAmI: ";
 	a.whoAmI();
 	std::cout << "b whoAmI: ";
@@ -57,4 +75,12 @@ int main(void) {
 	d.whoAmI();
 
 	std::cout << std::endl;
+	a.takeDamage(100);
+	std::cout << std::endl;
+
+	for (int i = 0; i < 25; i++) {
+		b.attack("enemy");
+		b.beRepaired(1);
+		std::cout << std::endl;
+	}
 }

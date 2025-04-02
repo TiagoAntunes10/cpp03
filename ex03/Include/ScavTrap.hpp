@@ -6,7 +6,7 @@
 /*   By: tialbert <tialbert@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 16:06:00 by tialbert          #+#    #+#             */
-/*   Updated: 2025/03/25 21:33:27 by tialbert         ###   ########.fr       */
+/*   Updated: 2025/04/02 22:10:21 by tialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@ class ScavTrap: virtual public ClapTrap {
 		~ScavTrap( void );
 		void	attack( std::string target );
 		void	guardGate( void );
+
+	protected:
+		static int	_energyPoints;
+		std::string	_name;
 };
 
 #endif

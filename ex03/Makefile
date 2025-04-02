@@ -8,7 +8,7 @@ SOURCES = ${addprefix $(PRE), $(SOURCE)}
 NAME = diamond_trap
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow -Wno-shadow
 
 OBJ = $(SOURCES:.cpp=.o)
 
