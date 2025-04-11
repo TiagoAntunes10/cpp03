@@ -6,7 +6,7 @@
 /*   By: tialbert <tialbert@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 22:39:53 by tialbert          #+#    #+#             */
-/*   Updated: 2025/04/02 22:07:16 by tialbert         ###   ########.fr       */
+/*   Updated: 2025/04/11 22:06:10 by tialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ FragTrap::FragTrap( FragTrap const &st ) : ClapTrap(st) {
 FragTrap &FragTrap::operator= ( FragTrap const &st ) {
 	_name = st._name;
 
-	if (ClapTrap::_atkDamage == 0)
+	if (ClapTrap::_atkDamage == 0 || _energyPoints == 100)
 		ClapTrap::operator= (st);
 
 	std::cout << "FragTrap "

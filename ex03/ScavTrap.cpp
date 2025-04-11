@@ -6,7 +6,7 @@
 /*   By: tialbert <tialbert@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 16:07:27 by tialbert          #+#    #+#             */
-/*   Updated: 2025/04/02 22:17:31 by tialbert         ###   ########.fr       */
+/*   Updated: 2025/04/11 21:57:47 by tialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,29 +82,22 @@ ScavTrap::~ScavTrap( void ) {
 }
 
 void	ScavTrap::attack( std::string target ) {
-	if (ClapTrap::_energyPoints == 0) {
-		std::cout << "No energy to perform action!" << std::endl;
-		return ;
-	}
-	else if (ClapTrap::_hitPoints == 0) {
-		std::cout << _name << " is dead!" << std::endl;
-		return ;
-	}
+	ClapTrap::attack("");
 
-	ClapTrap::_energyPoints--;
-
-	std::cout << "ScavTrap "
-		<< _name
-		<< " attacks "
-		<< target
-		<< ", causing "
-		<< _atkDamage
-		<< " points of damage! (Total health: "
-		<< _hitPoints
-		<< "; Total energy: "
-		<< ClapTrap::_energyPoints
-		<< ")"
-		<< std::endl;
+	if (ClapTrap::_energyPoints > 0 && ClapTrap::_hitPoints > 0) {
+		std::cout << "ScavTrap "
+			<< _name
+			<< " attacks "
+			<< target
+			<< ", causing "
+			<< _atkDamage
+			<< " points of damage! (Total health: "
+			<< ClapTrap::_hitPoints
+			<< "; Total energy: "
+			<< ClapTrap::_energyPoints
+			<< ")"
+			<< std::endl;
+	}
 }
 
 void	ScavTrap::guardGate( void ) {
